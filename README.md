@@ -1,4 +1,23 @@
-UIView-Gravity
+UIView+Gravity
 ==============
 
-add a BOOL followGravity property on UIView to let them rotate by 90 degree with the device rotation.
+UIView+Gravity is a category on UIView that add a `@property (nonatomic) BOOL followGravity` on all `UIView` to let them rotate by 90 degree increment with the device rotation.
+
+The `UIView` will remove itself from the animation whenever it gets deallocated. 
+To make the view rotate. you can simply call:
+
+    UIView * view = [[UIView alloc] initWithFrame:frame];
+    view.followGravity = YES;
+    
+The option is available on any other UIView subclass.
+
+It's free and should work as is...
+
+it imports: 
+    `#import <objc/runtime.h>`
+    `#import <CoreMotion/CoreMotion.h>`
+    
+which may requires to add `frameworks` to your project.
+
+Thanks to Daij-Djan for the dealloc part.
+
