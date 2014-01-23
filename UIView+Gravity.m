@@ -84,7 +84,6 @@ static char MyCustomPropertyKey  = 0;
 	static GravityManager * sharedManager = nil;
 	dispatch_once(&pred, ^
     {
-        [UIView load];
         sharedManager               = [[self alloc] init];
         sharedManager.animatedViews = @[].mutableCopy;
         sharedManager.deviceMotionUpdateInterval = 0.4;
