@@ -13,6 +13,8 @@ The option is available on any other UIView subclass.
 
 It's free and should work as is...
 
+It does swizzle the dealloc of UIViews, you should not use it in production environmenent or only set this property to YES on icon, images or views that are cached during the entire app lifespan.
+
 it imports
 
     #import <objc/runtime.h>
