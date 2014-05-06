@@ -124,6 +124,8 @@ static char MyCustomPropertyKey  = 0;
 {
     if([self.animatedViews indexOfObjectIdenticalTo:view] == NSNotFound)
     {
+    	view.transform = 
+    	(self.angle == 0) ? CGAffineTransformIdentity : CGAffineTransformMakeRotation(angle);
         [self.animatedViews addObject:view];
     }
 }
